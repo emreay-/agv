@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="agv">
+	<link name="base_link">
+	<visual>
+		<geometry>
+			<mesh scale="1 1 1" filename="package://agv/urdf/agv.dae"/>
+		</geometry>
+		<origin xyz="-0.41 -0.245 0">
+	</visual>
+	</link>
+</robot>

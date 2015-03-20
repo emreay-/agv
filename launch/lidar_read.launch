@@ -1,0 +1,9 @@
+<launch>
+	<node pkg="agv" type="broadcaster_lidar_new"  name="Tf_Broadcaster" ></node>
+	<node pkg="sicktoolbox_wrapper" type="sicklms" name="sick_read">
+		<param name="port" type="string" value="/dev/ttyUSB1"/>
+		<param name="baud" value="38400"/></node>
+	<!-- RVIZ -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find agv)/lidar.rviz" />
+</launch>
+

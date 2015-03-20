@@ -1,0 +1,13 @@
+<launch>
+	<!-- RVIZ -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find agv)/urdf.rviz" />
+	<arg name="gui" default="False" />
+	<param name="robot_description" textfile="$(find agv)/urdf/agv_.urdf" />
+	<param name="use_gui" value="$(arg gui)"/>
+	<param name="state" value="0" type="int"/>
+	<!-- ROBOT STATE PUBLISHER NODE -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	<!-- RECTANGULAR TF BROADCASTER NODE -->
+	<node pkg="agv" type="rectangular_tf_cl"  name="Rectangular_Tf_Broadcaster" ></node> 
+</launch>
+

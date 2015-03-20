@@ -1,0 +1,26 @@
+<launch>
+	<!-- JOY NODE -->
+	<node respawn="true" pkg="joy"
+		type="joy_node" name="joy_node" >
+		<param name="dev" type="string" value="/dev/input/js0" />
+		<param name="deadzone" value="0.12" />
+	</node>
+
+	<!-- PS3 JOYSTICK PARAMETERS -->
+	<param name="analog_left_upwards" value="1" />
+	<param name="analog_right_upwards" value="3" />
+	<param name="right2_" value="9" />
+	<param name="cross_up" value="4" />
+	<param name="cross_right" value="5" />
+	<param name="cross_down" value="6" />
+	<param name="cross_left" value="7" />
+
+	<!-- SCALAR PARAMETERS -->
+	<param name="scale_linear_L" value="9" />
+	<param name="scale_linear_R" value="9" />
+	<!-- TF BROADCASTER NODE -->
+	<node pkg="agv" type="agvTeleopnew"  name="agv_teleop" ></node>
+	
+	<node respawn="true" pkg="agv" type="agvSend.py" name="agv_send"></node>
+</launch>
+
