@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs message_generation
    FILES
    uint8Array.msg
    int16Array.msg
+   float32Array.msg
  )
 
 ## Generate services in the 'srv' folder
@@ -46,7 +47,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs message_generation
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES mobile_robot
+  LIBRARIES agv
   CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
   DEPENDS system_lib
 )
@@ -196,5 +197,8 @@ add_executable(broadcaster_lidar_new src/broadcaster_lidar_new.cpp)
 target_link_libraries(broadcaster_lidar_new ${catkin_LIBRARIES})
 add_dependencies(broadcaster_lidar_new agv_gencpp)
 
+add_executable(odometry_broadcaster src/odometry_broadcaster.cpp)
+target_link_libraries(odometry_broadcaster ${catkin_LIBRARIES})
+add_dependencies(odometry_broadcaster agv_gencpp)
 
 

@@ -1,0 +1,8 @@
+<launch>
+	<include file="$(find agv)/launch/agvTeleopnew.launch"/>
+	<node pkg="xsens_driver" type="mtnode.py" name="xsens_driver" output="screen" >
+		<param name="frame_id" value="/base_imu" />
+                <param name="device" value="/dev/ttyUSB3" />
+                <param name="baudrate" value="115200" />
+	</node>
+</launch>

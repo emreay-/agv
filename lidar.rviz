@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /Grid1
         - /LaserScan1
       Splitter Ratio: 0.5
     Tree Height: 463
@@ -46,7 +47,7 @@ Visualization Manager:
         Y: 0
         Z: 0
       Plane: XY
-      Plane Cell Count: 10
+      Plane Cell Count: 20
       Reference Frame: <Fixed Frame>
       Value: true
     - Alpha: 1
@@ -62,9 +63,9 @@ Visualization Manager:
       Color Transformer: Intensity
       Decay Time: 0
       Enabled: true
-      Max Color: 255; 255; 255
+      Max Color: 255; 0; 0
       Max Intensity: 4096
-      Min Color: 0; 0; 0
+      Min Color: 255; 255; 255
       Min Intensity: 0
       Name: LaserScan
       Position Transformer: XYZ
@@ -79,7 +80,7 @@ Visualization Manager:
       Value: true
   Enabled: true
   Global Options:
-    Background Color: 48; 48; 48
+    Background Color: 0; 0; 0
     Fixed Frame: /laser
   Name: root
   Tools:
@@ -103,7 +104,7 @@ Visualization Manager:
       Class: rviz/TopDownOrtho
       Name: Current View
       Near Clip Distance: 0.01
-      Scale: 47.4738
+      Scale: 24.6927
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
       X: -0.250523

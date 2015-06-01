@@ -5,7 +5,7 @@ import struct
 import serial
 from std_msgs.msg import Char
 
-def agvGet():
+def get_encoder_counts():
     pub = rospy.Publisher('encoder_values', int16Array)
     rospy.init_node('agvGet', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -27,4 +27,4 @@ def agvGet():
 if __name__ == '__main__':
     port = serial.Serial("/dev/ttyUSB1", baudrate = 115200, bytesize = 8, stopbits = 1, timeout = 2)
     port.open()
-    agvGet()
+    get_encoder_counts()

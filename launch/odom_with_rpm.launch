@@ -1,0 +1,6 @@
+<launch>
+	<include file="$(find agv)/launch/agvTeleopnew.launch"/>
+	<node pkg="agv" type="get_rpm.py" name="get_encoder_value"></node>
+	<node pkg="agv" type="odometry_broadcaster"  name="odom_broad" ></node>
+</launch>
+
